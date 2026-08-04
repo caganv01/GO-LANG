@@ -12,6 +12,9 @@ Odak: güvenlik / pentest tooling (nuclei, ffuf, httpx gibi araçların yazıld�
 
 ## 🗺️ Roadmap & İlerleme
 
+👉 **Gün gün detaylı plan:** [notlar/YOL-HARITASI.md](notlar/YOL-HARITASI.md)
+
+
 | Faz | Konu | Proje | Durum |
 |-----|------|-------|-------|
 | 0 | Kurulum & toolchain | — | 🔄 Devam ediyor |
