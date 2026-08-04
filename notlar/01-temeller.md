@@ -208,6 +208,22 @@ Go derleyicisinin sabit matematik motoru çok güçlüdür — sabitler devasa/y
 
 > **Ders:** Sabit çok büyükse ve `int`e (max 64-bit) sığmıyorsa Go compile-time'da yakalar → runtime sürprizi olmaz.
 
+### Sabite atama denemesi → derleme hatası
+`MaxPort = 100` yazarsan Go şu hatayı verir (runtime'da değil, **derlenmez**):
+```
+cannot assign to MaxPort (neither addressable nor a map index expression)
+```
+Sebep: const bir bellek hücresi değildir; değeri derleme anında doğrudan koda gömülür, o yüzden "atanacak bir yer" yoktur.
+
+### Neden `const` ile `:=` kullanılamaz? (3 sebep)
+1. **`:=` = değişken kısayolu.** `:=`, arka planda `var` + tip çıkarımıdır (`x := 10` → `var x int = 10`). `var` doğası gereği **değiştirilebilir** bir bellek alanıdır; `const` ise **değişmez**. Değişken üretmek için tasarlanmış kısayolu sabit için kullanmak mantıksal çelişkidir.
+2. **Compile-time vs run-time.** `const` derleme aşamasında kesinleşip koda gömülür. `:=` ise fonksiyon içinde, program çalışırken (run-time) hafızada yer açılan yerel değişkenler içindir. Derleyici, değerin kesin/değişmez olduğunu garanti altına almak için açıkça `const` görmek ister.
+3. **Okunabilirlik.** `HedefPort := 443` satırına bakan biri bunun değişken mi sabit mi olduğunu anlayamaz. Go seni `const HedefPort = 443` yazmaya zorlayarak belirsizliği kaldırır.
+
+> **Kısa özet:**
+> - `:=` → "yeni bir **değişken** oluştur, değerini sonra değiştirebilirim"
+> - `const` → "bu değer program kapanana kadar **asla değişmeyecek**, betona kaz"
+
 ---
 
 ## Faz 1 — Öğrenilenler Özeti
