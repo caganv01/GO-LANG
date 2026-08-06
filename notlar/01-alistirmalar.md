@@ -88,5 +88,5 @@ type Hedef struct {
 ---
 
 ## Kontrol
-- [ ] Görev 1  - [ ] Görev 2  - [ ] Görev 3
-- [ ] Görev 4  - [ ] Görev 5  - [ ] Görev 6  - [ ] Bonus
+- [+] Görev 1  - [+] Görev 2  - [+] Görev 3
+- [+] Görev 4  - [+] Görev 5  - [+] Görev 6  - [ ] Bonus

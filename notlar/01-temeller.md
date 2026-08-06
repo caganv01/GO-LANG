@@ -1,8 +1,10 @@
-> Kişisel çalışma notu. Go — Faz 1 Temeller. A Tour of Go üzerinden çalışılan konular, kendi cümlelerimle + C/Java karşılaştırmalı. Güvenlik/oyun senaryolarıyla pekiştirilmiş.
+# 📚 Faz 1 — Go Temelleri (Adım Adım)
+
+> Kişisel çalışma notu. Go — Faz 1 Temeller. A Tour of Go üzerinden öğrenilen konular, kendi cümlelerimle + C/Java karşılaştırmalı. Güvenlik/oyun senaryolarıyla pekiştirilmiş.
 
 ---
 
-## 1. Exported / Unexported (Erişim Belirleyici)
+## 1️⃣ Exported vs Unexported (Erişim Kuralı)
 
 Go'da Java'daki gibi `private`/`public`/`protected` **yoktur**. Erişimi **ismin ilk harfi** belirler:
 
